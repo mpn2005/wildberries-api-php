@@ -1,7 +1,5 @@
-.gitignore
 .php-cs-fixer.dist.php
 .travis.yml
-README.md
 composer.json
 docs/Api/DefaultApi.md
 docs/Api/MarketplaceApi.md
@@ -332,7 +330,6 @@ docs/Model/SupplyOrder.md
 docs/Model/SupplyTrbx.md
 docs/Model/TrbxStickers.md
 docs/Model/Warehouse.md
-git_push.sh
 lib/Api/DefaultApi.php
 lib/Api/MarketplaceApi.php
 lib/ApiException.php

@@ -1,37 +1,7 @@
-# OpenAPIClient-php
+# Wildberries API продавца 2.16 (OpenAPIClient-php)
+Сгенерированное Open-API Wildberries для языка PHP
 
 # Общее описание
-<style> .langChange {
-  text-align: left;
-  padding: 2px 222px 2px 18px;
-} </style> <style> .new {
-  display: inline-block;
-  padding: 2px 8px;
-  margin: 0;
-  background-color: #ffa500;
-  color: #ffffff;
-  font-size: 13px;
-  vertical-align: middle;
-  line-height: 1.6;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 12px;
-} </style> <style> .newM {
-  padding: 5px 10px;
-  display: inline-block;
-  background-color: #ffa500;
-  color: #ffffff;
-  cursor: pointer;
-  text-align: center;
-  outline: none;
-  margin: 0 5px 5px 5px;
-  #border: 1px solid #07090b;
-  border-radius: 5px;
-  min-width: 60px;
-  font-size: 0.9em;
-  font-weight: bold;
-} </style>
-
 Wildberries API предоставляет продавцам возможность управления магазином и получения оперативной и статистической информации по протоколу HTTP RestAPI. <br> Описание API предоставляется в формате [Swagger](https://swagger.io/) (Open API) и может быть использовано для импорта в другие инструменты (такие как PostMan) или генерации клиентского кода на различных языках программирования с помощью [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
 
 <ul> <li> Описание в оригинальном swagger-формате <a href=\"/swagger\">swagger</a> <li> OpenAPI-файл <a href=\"/swagger.yaml\">swagger.yaml</a> </ul>
