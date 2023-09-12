@@ -1,5 +1,5 @@
 # Wildberries API продавца 2.16 (OpenAPIClient-php)
-Сгенерированное Open-API Wildberries для языка PHP
+Сгенерированное [Open-API Wildberries](https://openapi.wildberries.ru/) для языка PHP
 
 # Общее описание
 Wildberries API предоставляет продавцам возможность управления магазином и получения оперативной и статистической информации по протоколу HTTP RestAPI. <br> Описание API предоставляется в формате [Swagger](https://swagger.io/) (Open API) и может быть использовано для импорта в другие инструменты (такие как PostMan) или генерации клиентского кода на различных языках программирования с помощью [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
