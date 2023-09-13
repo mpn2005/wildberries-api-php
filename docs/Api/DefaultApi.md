@@ -5856,7 +5856,7 @@ contentV1DirectoryBrandsGet($top, $pattern): \OpenAPI\Client\Model\ContentV1Dire
 - https://suppliers-api.wildberries.ru 
 Бренд
 
-Получение значения характеристики Бренд.
+Получение значения характеристики Бренд. <br> `Важно!` Метод будет отключен 21 сентября.
 
 ### Example
 
