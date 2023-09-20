@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **menus** | [**\OpenAPI\Client\Model\ResponseInfoAdvertType8AutoParamsMenusInner[]**](ResponseInfoAdvertType8AutoParamsMenusInner.md) |  | [optional]
 **active** | [**\OpenAPI\Client\Model\ResponseInfoAdvertType8AutoParamsActive**](ResponseInfoAdvertType8AutoParamsActive.md) |  | [optional]
 **nms** | **int[]** | Артикулы WB | [optional]
-**cpm** | **int** | Ставка (Отображается только при наличии) &lt;span class&#x3D;\&quot;new\&quot;&gt;new&lt;/span&gt; | [optional]
+**cpm** | **int** | Ставка (Отображается только при наличии) | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

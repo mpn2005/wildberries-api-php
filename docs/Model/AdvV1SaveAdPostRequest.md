@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **subject_id** | **int** | ID предмета, для которого создается кампания.&lt;br&gt; Существующие у продавца идентификаторы можно получить методом из раздела \&quot;Контент / Просмотр\&quot; - \&quot;Список НМ\&quot;, поле ответа - &#x60;objectID&#x60;. | [optional]
 **sum** | **int** | Сумма пополнения | [optional]
 **btype** | **int** | &lt;dl&gt; &lt;dt&gt;Tип списания.&lt;/dt&gt; &lt;dd&gt;&lt;code&gt;0&lt;/code&gt; - balance&lt;/dd&gt; &lt;dd&gt;&lt;code&gt;1&lt;/code&gt; - net&lt;/dd&gt; &lt;dd&gt;&lt;code&gt;3&lt;/code&gt; - bonus&lt;/dd&gt; &lt;/dl&gt; | [optional]
+**on_pause** | **bool** | &lt;dl&gt; &lt;dt&gt;После создания кампания &lt;span class&#x3D;\&quot;new\&quot;&gt;NEW&lt;/span&gt;&lt;/dt&gt;  &lt;dd&gt;&lt;code&gt;true&lt;/code&gt; - будет на паузе&lt;/dd&gt;  &lt;dd&gt;&lt;code&gt;false&lt;/code&gt; - будет сразу запущена&lt;/dd&gt;  &lt;/dl&gt; | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -398,7 +398,7 @@ apiV3OrdersOrderIdMetaDelete($order_id, $key)
 - https://suppliers-api.wildberries.ru 
 Удалить метаданные сборочного задания
 
-Удаляет значение метаданных заказа для переданного ключа. Возможные метаданные **imei**, **uin**, **gtin**. Передается только одно значение. <span class=\"newM\">new</span>
+Удаляет значение метаданных заказа для переданного ключа. Возможные метаданные **imei**, **uin**, **gtin**. Передается только одно значение.
 
 ### Example
 
@@ -468,7 +468,7 @@ apiV3OrdersOrderIdMetaGet($order_id): \OpenAPI\Client\Model\ApiV3OrdersOrderIdMe
 - https://suppliers-api.wildberries.ru 
 Получить метаданные сборочного задания
 
-Возвращает метаданные заказа. Возможные метаданные **imei**, **uin**, **gtin**. <span class=\"newM\">new</span>
+Возвращает метаданные заказа. Возможные метаданные **imei**, **uin**, **gtin**.
 
 ### Example
 
@@ -607,7 +607,7 @@ apiV3OrdersOrderIdMetaImeiPut($order_id, $api_v3_orders_order_id_meta_imei_put_r
 - https://suppliers-api.wildberries.ru 
 Закрепить за сборочным заданием IMEI
 
-Обновляет IMEI сборочного задания. У одного сборочного задания может быть только один IMEI. Добавлять маркировку можно только для заказов в статусе `confirm`. <span class=\"newM\">new</span>
+Обновляет IMEI сборочного задания. У одного сборочного задания может быть только один IMEI. Добавлять маркировку можно только для заказов в статусе `confirm`.
 
 ### Example
 
@@ -747,7 +747,7 @@ apiV3OrdersOrderIdMetaUinPut($order_id, $api_v3_orders_order_id_meta_uin_put_req
 - https://suppliers-api.wildberries.ru 
 Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
-Обновляет УИН сборочного задания. У одного сборочного задания может быть только один УИН. Добавлять маркировку можно только для заказов в статусе `confirm`. <span class=\"newM\">new</span>
+Обновляет УИН сборочного задания. У одного сборочного задания может быть только один УИН. Добавлять маркировку можно только для заказов в статусе `confirm`.
 
 ### Example
 

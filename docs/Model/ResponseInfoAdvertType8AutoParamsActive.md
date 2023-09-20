@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**carousel** | **bool** | Поиск/Каталог (&#x60;false&#x60; - отключены, &#x60;true&#x60; - включены) | [optional]
+**carousel** | **bool** | Карточка товара (&#x60;false&#x60; - отключены, &#x60;true&#x60; - включены) | [optional]
 **recom** | **bool** | Рекомендации на главной (&#x60;false&#x60; - отключены, &#x60;true&#x60; - включены) | [optional]
 **booster** | **bool** | Поиск/Каталог (&#x60;false&#x60; - отключены, &#x60;true&#x60; - включены) | [optional]
 

@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **atbs** | **int** | Количество добавлений товаров в корзину.&lt;br&gt; &lt;b&gt;За все дни, по всем артикулам WB и платформам.&lt;/b&gt; | [optional]
 **orders** | **int** | Количество заказов товара.&lt;br&gt; &lt;b&gt;За все дни, по всем артикулам WB и платформам.&lt;/b&gt; | [optional]
 **cr** | **int** | CR(conversion rate) — это отношение количества заказов к общему количеству посещений кампании.&lt;br&gt; &lt;b&gt;За все дни, по всем артикулам WB и платформам.&lt;/b&gt; | [optional]
-**shks** | **int** | Заказано товаров, шт  &lt;span class&#x3D;\&quot;new\&quot;&gt;new&lt;/span&gt; &lt;br&gt;  &lt;b&gt;За все дни, по всем артикулам WB и платформам.&lt;/b&gt; | [optional]
-**sum_price** | **int** | Заказов на сумму, ₽  &lt;span class&#x3D;\&quot;new\&quot;&gt;new&lt;/span&gt; &lt;/br&gt; &lt;b&gt;За все дни, по всем артикулам WB и платформам.&lt;/b&gt; | [optional]
+**shks** | **int** | Заказано товаров, шт &lt;br&gt;  &lt;b&gt;За все дни, по всем артикулам WB и платформам.&lt;/b&gt; | [optional]
+**sum_price** | **int** | Заказов на сумму, ₽   &lt;/br&gt; &lt;b&gt;За все дни, по всем артикулам WB и платформам.&lt;/b&gt; | [optional]
 **detailed** | **bool** | Не используется | [optional]
 **booster_stats** | [**\OpenAPI\Client\Model\AdvV1FullstatGet200ResponseBoosterStatsInner[]**](AdvV1FullstatGet200ResponseBoosterStatsInner.md) | Статистика по средней позиции товара на страницах поисковой выдачи и каталога (для автоматических кампаний). &lt;span class&#x3D;\&quot;new\&quot;&gt;new&lt;/span&gt; | [optional]
 
