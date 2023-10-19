@@ -24,4 +24,4 @@
 
 .gitignore
 git_push.sh
-README.md
+#README.md
