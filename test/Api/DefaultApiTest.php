@@ -10,13 +10,13 @@
  */
 
 /**
- * API продавца
+ * Работа с товарами
  *
- * # Общее описание <style> .langChange {   text-align: left;   padding: 2px 222px 2px 18px; } </style> <style> .new {   display: inline-block;   padding: 2px 8px;   margin: 0;   background-color: #ffa500;   color: #ffffff;   font-size: 13px;   vertical-align: middle;   line-height: 1.6;   border-radius: 4px;   font-weight: 600;   font-size: 12px; } </style> <style> .newM {   padding: 5px 10px;   display: inline-block;   background-color: #ffa500;   color: #ffffff;   cursor: pointer;   text-align: center;   outline: none;   margin: 0 5px 5px 5px;   #border: 1px solid #07090b;   border-radius: 5px;   min-width: 60px;   font-size: 0.9em;   font-weight: bold; } </style>  Wildberries API предоставляет продавцам возможность управления магазином и получения оперативной и статистической информации по протоколу HTTP RestAPI. <br> Описание API предоставляется в формате [Swagger](https://swagger.io/) (Open API) и может быть использовано для импорта в другие инструменты (такие как PostMan) или генерации клиентского кода на различных языках программирования с помощью [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)  <ul> <li> Описание в оригинальном swagger-формате <a href=\"/swagger\">swagger</a> <li> OpenAPI-файл <a href=\"/swagger.yaml\">swagger.yaml</a> </ul>  <br> Для ручной провеПродвижение /и API вы можете использовать: <ul> <li> Под ОС Windows - [PostMan](https://www.postman.com/) <li> Под ОС Linux - [curl](https://curl.se/)  </ul> <br>  ## Поддержка Техническая поддержка осуществляется через диалоги в личном кабинете продавца. При создании нового обращения в техподдержку используйте категорию API. <br> Новости и изменения, касающиеся API, публикуются в [новостной ленте Wildberries](https://seller.wildberries.ru/news). <br> <br> <br>  ## Авторизация Авторизация осуществляется по токенам API, которые  владелец личного кабинета (главный пользователь) самостоятельно  генерирует в разделе   [Профиль --> Настройки --> Доступ к API](https://seller.wildberries.ru/supplier-settings/access-to-api).   <br>  <br>  Существует три типа токенов:   <ol>     <li>Стандартный. Используется для работы с методами из разделов: Цены, Промокоды и скидки, Контент, Marketplace, Рекомендации, Отзывы, Вопросы.</li>     <li>Статистика. Используется для работы с методами из раздела Статистика.</li>     <li>Продвижение. Используется для работы с методами из раздела Продвижение.</li>   </ol>    Обратите внимание, что токен отображается ТОЛЬКО в момент создания. Его надо сохранить, потому что больше его отобразить будет нельзя. <br>Созданный токен следует добавлять в каждый запрос, прибавляя к запросу заголовок (http-header) формата `Authorization: .........`. <br> <br> Обращаем ваше внимание, что интеграции с Порталом Продавца, не использующие Публичное API, противоречат пункту 9.7.6 оферты. <br> Тем не менее, при отсутствии прямой угрозы утечки данных из личного кабинета продавца Wildberries заранее уведомит продавца о запланированной блокировке, связанной с этим пунктом, давая возможность отключить интеграцию. <br> <br> <br> ## Форматы ### Дата и время Во всех методах API статистики дата и время передаются в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).  <br> В большинстве случаев вы можете передать дату или дату со временем. Если время не указано, оно принимается равным 00:00:00. Время можно указывать с точностью до секунд или миллисекунд.  Литера `Z` в конце строки означает часовой пояс UTC. При ее отсутствии время считается в часовом поясе МСК (UTC+3). <br> Примеры: <ul> <li> `2019-06-20` <li> `2019-06-20T00:00:00Z` <li> `2019-06-20T23:59:59` <li> `2019-06-20T00:00:00.12345Z` <li> `2019-06-20T00:00:00.12345` <li> `2017-03-25T00:00:00` </ul> <br> ## Release Notes <p>Для просмотра обновлений перейдите по <span><a href=\"./releasenotes/index.html\" target=\"_blank\">ссылке</a></span>.</p>
+ * <div class=\"description_important\">       Узнать больше о работе с товарами можно в <a href=\"https://seller.wildberries.ru/instructions/category/8eeeafc6-4b7a-453d-925a-00fc56510f67?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Работа с товарами включает в себя:   1. [Создание](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактирование](/openapi/work-with-products#tag/Kartochki-tovarov) карточек товаров: в том числе, получение [категорий, предметов и характеристик товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki) и загрузку [медиафайлов](/openapi/work-with-products#tag/Mediafajly).   2. Настройку [ярлыков](/openapi/work-with-products#tag/Yarlyki) для удобного поиска товаров.   3. Установку [цен и скидок](/openapi/work-with-products#tag/Ceny-i-skidki).   4. Управление [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца.
  *
- * The version of the OpenAPI document: 2.16
+ * The version of the OpenAPI document: products
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 7.0.0
+ * Generator version: 7.12.0
  */
 
 /**
@@ -72,1262 +72,542 @@ class DefaultApiTest extends TestCase
     }
 
     /**
-     * Test case for advV0ActiveGet
+     * Test case for apiV2BufferGoodsTaskGet
      *
-     * Изменение активности предметной группы для кампании в поиске.
+     * Детализация необработанной загрузки.
      *
      */
-    public function testAdvV0ActiveGet()
+    public function testApiV2BufferGoodsTaskGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0AdvertGet
+     * Test case for apiV2BufferTasksGet
      *
-     * Информация о кампании.
+     * Состояние необработанной загрузки.
      *
      */
-    public function testAdvV0AdvertGet()
+    public function testApiV2BufferTasksGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0AdvertsCreatePost
+     * Test case for apiV2HistoryGoodsTaskGet
      *
-     * Создание кампании, тестовый.
+     * Детализация обработанной загрузки.
      *
      */
-    public function testAdvV0AdvertsCreatePost()
+    public function testApiV2HistoryGoodsTaskGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0AdvertsGet
+     * Test case for apiV2HistoryTasksGet
      *
-     * Список кампаний.
+     * Состояние обработанной загрузки.
      *
      */
-    public function testAdvV0AdvertsGet()
+    public function testApiV2HistoryTasksGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0AllcpmPost
+     * Test case for apiV2ListGoodsFilterGet
      *
-     * Список ставок по типу размещения кампании.
+     * Получить товары с ценами.
      *
      */
-    public function testAdvV0AllcpmPost()
+    public function testApiV2ListGoodsFilterGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0CountGet
+     * Test case for apiV2ListGoodsSizeNmGet
      *
-     * Получение кампаний.
+     * Получить размеры товара с ценами.
      *
      */
-    public function testAdvV0CountGet()
+    public function testApiV2ListGoodsSizeNmGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0CpmGet
+     * Test case for apiV2QuarantineGoodsGet
      *
-     * Список ставок.
+     * Получить товары в карантине.
      *
      */
-    public function testAdvV0CpmGet()
+    public function testApiV2QuarantineGoodsGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0CpmPost
+     * Test case for apiV2UploadTaskClubDiscountPost
      *
-     * Изменение ставки у кампании.
+     * Установить скидки WB Клуба.
      *
      */
-    public function testAdvV0CpmPost()
+    public function testApiV2UploadTaskClubDiscountPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0IntervalsPost
+     * Test case for apiV2UploadTaskPost
      *
-     * Изменение интервалов показа кампании.
+     * Установить цены и скидки.
      *
      */
-    public function testAdvV0IntervalsPost()
+    public function testApiV2UploadTaskPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0NmactivePost
+     * Test case for apiV2UploadTaskSizePost
      *
-     * Изменение активности номенклатур кампании.
+     * Установить цены для размеров.
      *
      */
-    public function testAdvV0NmactivePost()
+    public function testApiV2UploadTaskSizePost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0ParamsMenuGet
+     * Test case for apiV3OfficesGet
      *
-     * Словарь значений параметра menuId.
+     * Получить список складов WB.
      *
      */
-    public function testAdvV0ParamsMenuGet()
+    public function testApiV3OfficesGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0ParamsSetGet
+     * Test case for apiV3StocksWarehouseIdDelete
      *
-     * Словарь значений параметра setId.
+     * Удалить остатки товаров.
      *
      */
-    public function testAdvV0ParamsSetGet()
+    public function testApiV3StocksWarehouseIdDelete()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0ParamsSubjectGet
+     * Test case for apiV3StocksWarehouseIdPost
      *
-     * Словарь значений параметра subjectId.
+     * Получить остатки товаров.
      *
      */
-    public function testAdvV0ParamsSubjectGet()
+    public function testApiV3StocksWarehouseIdPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0PauseGet
+     * Test case for apiV3StocksWarehouseIdPut
      *
-     * Пауза кампании.
+     * Обновить остатки товаров.
      *
      */
-    public function testAdvV0PauseGet()
+    public function testApiV3StocksWarehouseIdPut()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0RenamePost
+     * Test case for apiV3WarehousesGet
      *
-     * Переименование кампании.
+     * Получить список складов продавца.
      *
      */
-    public function testAdvV0RenamePost()
+    public function testApiV3WarehousesGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0StartGet
+     * Test case for apiV3WarehousesPost
      *
-     * Запуск кампании.
+     * Создать склад продавца.
      *
      */
-    public function testAdvV0StartGet()
+    public function testApiV3WarehousesPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV0StopGet
+     * Test case for apiV3WarehousesWarehouseIdDelete
      *
-     * Завершение кампании.
+     * Удалить склад продавца.
      *
      */
-    public function testAdvV0StopGet()
+    public function testApiV3WarehousesWarehouseIdDelete()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV1AutoActivePost
+     * Test case for apiV3WarehousesWarehouseIdPut
      *
-     * Управление зонами показов в автоматической кампании.
+     * Обновить склад продавца.
      *
      */
-    public function testAdvV1AutoActivePost()
+    public function testApiV3WarehousesWarehouseIdPut()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for advV1AutoGetnmtoaddGet
-     *
-     * Список номенклатур для автоматической кампании.
-     *
-     */
-    public function testAdvV1AutoGetnmtoaddGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1AutoStatGet
-     *
-     * Статистика автоматической кампании.
-     *
-     */
-    public function testAdvV1AutoStatGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1AutoUpdatenmPost
-     *
-     * Изменение списка номенклатур в автоматической кампании.
-     *
-     */
-    public function testAdvV1AutoUpdatenmPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1BalanceGet
-     *
-     * Баланс.
-     *
-     */
-    public function testAdvV1BalanceGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1BudgetDepositPost
-     *
-     * Пополнение бюджета кампании.
-     *
-     */
-    public function testAdvV1BudgetDepositPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1BudgetGet
-     *
-     * Бюджет кампании.
-     *
-     */
-    public function testAdvV1BudgetGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1FullstatGet
-     *
-     * Полная статистика кампании.
-     *
-     */
-    public function testAdvV1FullstatGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1PaymentsGet
-     *
-     * Получение истории пополнений счета.
-     *
-     */
-    public function testAdvV1PaymentsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1SaveAdPost
-     *
-     * Создание кампании.
-     *
-     */
-    public function testAdvV1SaveAdPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1SeacatStatGet
-     *
-     * Статистика кампаний Поиск + Каталог.
-     *
-     */
-    public function testAdvV1SeacatStatGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1SearchSetExcludedPost
-     *
-     * Установка/удаление минус-фраз из поиска для кампании в поиске.
-     *
-     */
-    public function testAdvV1SearchSetExcludedPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1SearchSetPhrasePost
-     *
-     * Установка/удаление минус-фраз фразового соответствия для кампании в поиске.
-     *
-     */
-    public function testAdvV1SearchSetPhrasePost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1SearchSetPlusGet
-     *
-     * Управление активностью фиксированных фраз у кампании в поиске.
-     *
-     */
-    public function testAdvV1SearchSetPlusGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1SearchSetPlusPost
-     *
-     * Установка/удаление фиксированных фраз у кампании в поиске.
-     *
-     */
-    public function testAdvV1SearchSetPlusPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1SearchSetStrongPost
-     *
-     * Установка/удаление минус-фраз точного соответствия для кампании в поиске.
-     *
-     */
-    public function testAdvV1SearchSetStrongPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1StatWordsGet
-     *
-     * Статистика поисковой кампании по ключевым фразам.
-     *
-     */
-    public function testAdvV1StatWordsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1UpdGet
-     *
-     * Получение истории затрат.
-     *
-     */
-    public function testAdvV1UpdGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for advV1UpdIntervalsGet
-     *
-     * Получение месячных интервалов для истории затрат.
-     *
-     */
-    public function testAdvV1UpdIntervalsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1DelPost
-     *
-     * Удаление рекомендаций.
-     *
-     */
-    public function testApiV1DelPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1FeedbackGet
-     *
-     * Получить отзыв по Id.
-     *
-     */
-    public function testApiV1FeedbackGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1FeedbacksArchiveGet
-     *
-     * Список архивных отзывов.
-     *
-     */
-    public function testApiV1FeedbacksArchiveGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1FeedbacksCountGet
-     *
-     * Количество отзывов.
-     *
-     */
-    public function testApiV1FeedbacksCountGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1FeedbacksCountUnansweredGet
-     *
-     * Необработанные отзывы.
-     *
-     */
-    public function testApiV1FeedbacksCountUnansweredGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1FeedbacksGet
-     *
-     * Список отзывов.
-     *
-     */
-    public function testApiV1FeedbacksGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1FeedbacksPatch
-     *
-     * Работа с отзывом.
-     *
-     */
-    public function testApiV1FeedbacksPatch()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1FeedbacksProductsRatingGet
-     *
-     * Средняя оценка товаров по родительской категории.
-     *
-     */
-    public function testApiV1FeedbacksProductsRatingGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1FeedbacksProductsRatingNmidGet
-     *
-     * Средняя оценка товара по артикулу WB.
-     *
-     */
-    public function testApiV1FeedbacksProductsRatingNmidGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1FeedbacksProductsRatingTopGet
-     *
-     * Товары с наибольшей и наименьшей средней оценкой по родительской категории.
-     *
-     */
-    public function testApiV1FeedbacksProductsRatingTopGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1FeedbacksReportGet
-     *
-     * Получение отзывов в формате XLSX.
-     *
-     */
-    public function testApiV1FeedbacksReportGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1InsPost
-     *
-     * Добавление рекомендаций.
-     *
-     */
-    public function testApiV1InsPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1ListPost
-     *
-     * Список рекомендаций.
-     *
-     */
-    public function testApiV1ListPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1NewFeedbacksQuestionsGet
-     *
-     * Непросмотренные отзывы и вопросы.
-     *
-     */
-    public function testApiV1NewFeedbacksQuestionsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1ParentSubjectsGet
-     *
-     * Родительские категории товаров.
-     *
-     */
-    public function testApiV1ParentSubjectsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1QuestionGet
-     *
-     * Получить вопрос по Id.
-     *
-     */
-    public function testApiV1QuestionGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1QuestionsCountGet
-     *
-     * Количество вопросов.
-     *
-     */
-    public function testApiV1QuestionsCountGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1QuestionsCountUnansweredGet
-     *
-     * Неотвеченные вопросы.
-     *
-     */
-    public function testApiV1QuestionsCountUnansweredGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1QuestionsGet
-     *
-     * Список вопросов.
-     *
-     */
-    public function testApiV1QuestionsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1QuestionsPatch
-     *
-     * Работа с вопросами.
-     *
-     */
-    public function testApiV1QuestionsPatch()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1QuestionsProductsRatingGet
-     *
-     * Часто спрашиваемые товары.
-     *
-     */
-    public function testApiV1QuestionsProductsRatingGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1QuestionsReportGet
-     *
-     * Получение вопросов в формате XLSX.
-     *
-     */
-    public function testApiV1QuestionsReportGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1SetPost
-     *
-     * Управление рекомендациями.
-     *
-     */
-    public function testApiV1SetPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1SupplierIncomesGet
-     *
-     * Поставки.
-     *
-     */
-    public function testApiV1SupplierIncomesGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1SupplierOrdersGet
-     *
-     * Заказы.
-     *
-     */
-    public function testApiV1SupplierOrdersGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1SupplierReportDetailByPeriodGet
-     *
-     * Отчет о продажах по реализации.
-     *
-     */
-    public function testApiV1SupplierReportDetailByPeriodGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1SupplierSalesGet
-     *
-     * Продажи.
-     *
-     */
-    public function testApiV1SupplierSalesGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1SupplierStocksGet
-     *
-     * Склад.
-     *
-     */
-    public function testApiV1SupplierStocksGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1TemplatesDelete
-     *
-     * Удалить шаблон.
-     *
-     */
-    public function testApiV1TemplatesDelete()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1TemplatesGet
-     *
-     * Получить шаблоны ответов.
-     *
-     */
-    public function testApiV1TemplatesGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1TemplatesPatch
-     *
-     * Редактировать шаблон.
-     *
-     */
-    public function testApiV1TemplatesPatch()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiV1TemplatesPost
-     *
-     * Создать шаблон.
-     *
-     */
-    public function testApiV1TemplatesPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for contentV1AnalyticsNmReportDetailHistoryPost
-     *
-     * Получение статистики КТ по дням/неделям/месяцам по выбранным nmID.
-     *
-     */
-    public function testContentV1AnalyticsNmReportDetailHistoryPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for contentV1AnalyticsNmReportDetailPost
-     *
-     * Получение статистики КТ за выбранный период, по nmID/предметам/брендам/тегам.
-     *
-     */
-    public function testContentV1AnalyticsNmReportDetailPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for contentV1AnalyticsNmReportGroupedHistoryPost
-     *
-     * Получение статистики КТ по дням/неделям/месяцам за период, сгруппированный по предметам, брендам и тегам.
-     *
-     */
-    public function testContentV1AnalyticsNmReportGroupedHistoryPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for contentV1AnalyticsNmReportGroupedPost
-     *
-     * Получение статистики КТ за период, сгруппированный по предметам, брендам и тегам.
-     *
-     */
-    public function testContentV1AnalyticsNmReportGroupedPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for contentV1BarcodesPost
+     * Test case for contentV2BarcodesPost
      *
      * Генерация баркодов.
      *
      */
-    public function testContentV1BarcodesPost()
+    public function testContentV2BarcodesPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1CardsCursorListPost
+     * Test case for contentV2CardsDeleteTrashPost
      *
-     * Список НМ.
+     * Перенос карточек товаров в корзину.
      *
      */
-    public function testContentV1CardsCursorListPost()
+    public function testContentV2CardsDeleteTrashPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1CardsErrorListGet
+     * Test case for contentV2CardsErrorListGet
      *
-     * Список несозданных НМ с ошибками.
+     * Список несозданных карточек товаров с ошибками.
      *
      */
-    public function testContentV1CardsErrorListGet()
+    public function testContentV2CardsErrorListGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1CardsFilterPost
+     * Test case for contentV2CardsLimitsGet
      *
-     * Получение КТ по артикулам продавца.
+     * Лимиты карточек товаров.
      *
      */
-    public function testContentV1CardsFilterPost()
+    public function testContentV2CardsLimitsGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1CardsLimitsGet
+     * Test case for contentV2CardsMoveNmPost
      *
-     * Лимиты по КТ.
+     * Объединение и разъединение карточек товаров.
      *
      */
-    public function testContentV1CardsLimitsGet()
+    public function testContentV2CardsMoveNmPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1CardsMoveNmPost
+     * Test case for contentV2CardsRecoverPost
      *
-     * Объединение / Разъединение НМ.
+     * Восстановление карточек товаров из корзины.
      *
      */
-    public function testContentV1CardsMoveNmPost()
+    public function testContentV2CardsRecoverPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1CardsTrashListPost
+     * Test case for contentV2CardsUpdatePost
      *
-     * Список НМ, находящихся в корзине.
+     * Редактирование карточек товаров.
      *
      */
-    public function testContentV1CardsTrashListPost()
+    public function testContentV2CardsUpdatePost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1CardsUpdatePost
+     * Test case for contentV2CardsUploadAddPost
      *
-     * Редактирование КТ.
+     * Создание карточек товаров с присоединением.
      *
      */
-    public function testContentV1CardsUpdatePost()
+    public function testContentV2CardsUploadAddPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1CardsUploadAddPost
+     * Test case for contentV2CardsUploadPost
      *
-     * Добавление НМ к КТ.
+     * Создание карточек товаров.
      *
      */
-    public function testContentV1CardsUploadAddPost()
+    public function testContentV2CardsUploadPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1CardsUploadPost
-     *
-     * Создание  КТ.
-     *
-     */
-    public function testContentV1CardsUploadPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for contentV1DirectoryBrandsGet
-     *
-     * Бренд.
-     *
-     */
-    public function testContentV1DirectoryBrandsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for contentV1DirectoryColorsGet
+     * Test case for contentV2DirectoryColorsGet
      *
      * Цвет.
      *
      */
-    public function testContentV1DirectoryColorsGet()
+    public function testContentV2DirectoryColorsGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1DirectoryCountriesGet
+     * Test case for contentV2DirectoryCountriesGet
      *
-     * Страна Производства.
+     * Страна производства.
      *
      */
-    public function testContentV1DirectoryCountriesGet()
+    public function testContentV2DirectoryCountriesGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1DirectoryKindsGet
+     * Test case for contentV2DirectoryKindsGet
      *
      * Пол.
      *
      */
-    public function testContentV1DirectoryKindsGet()
+    public function testContentV2DirectoryKindsGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1DirectorySeasonsGet
+     * Test case for contentV2DirectorySeasonsGet
      *
      * Сезон.
      *
      */
-    public function testContentV1DirectorySeasonsGet()
+    public function testContentV2DirectorySeasonsGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1DirectoryTnvedGet
+     * Test case for contentV2DirectoryTnvedGet
      *
-     * ТНВЭД код.
+     * ТНВЭД-код.
      *
      */
-    public function testContentV1DirectoryTnvedGet()
+    public function testContentV2DirectoryTnvedGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1MediaFilePost
+     * Test case for contentV2DirectoryVatGet
      *
-     * Добавление медиа контента в КТ.
+     * Ставка НДС.
      *
      */
-    public function testContentV1MediaFilePost()
+    public function testContentV2DirectoryVatGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1MediaSavePost
+     * Test case for contentV2GetCardsListPost
      *
-     * Изменение медиа контента КТ.
+     * Список карточек товаров.
      *
      */
-    public function testContentV1MediaSavePost()
+    public function testContentV2GetCardsListPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1ObjectAllGet
+     * Test case for contentV2GetCardsTrashPost
      *
-     * Категория товаров.
+     * Список карточек товаров в корзине.
      *
      */
-    public function testContentV1ObjectAllGet()
+    public function testContentV2GetCardsTrashPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1ObjectCharacteristicsListFilterGet
+     * Test case for contentV2ObjectAllGet
      *
-     * Характеристики для создания КТ по всем подкатегориям.
+     * Список предметов.
      *
      */
-    public function testContentV1ObjectCharacteristicsListFilterGet()
+    public function testContentV2ObjectAllGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1ObjectCharacteristicsObjectNameGet
+     * Test case for contentV2ObjectCharcsSubjectIdGet
      *
-     * Характеристики для создания КТ для категории товара.
+     * Характеристики предмета.
      *
      */
-    public function testContentV1ObjectCharacteristicsObjectNameGet()
+    public function testContentV2ObjectCharcsSubjectIdGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1ObjectParentAllGet
+     * Test case for contentV2ObjectParentAllGet
      *
      * Родительские категории товаров.
      *
      */
-    public function testContentV1ObjectParentAllGet()
+    public function testContentV2ObjectParentAllGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1TagIdDelete
+     * Test case for contentV2TagIdDelete
      *
-     * Удаление тега.
+     * Удаление ярлыка.
      *
      */
-    public function testContentV1TagIdDelete()
+    public function testContentV2TagIdDelete()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1TagIdPatch
+     * Test case for contentV2TagIdPatch
      *
-     * Изменение тега.
+     * Изменение ярлыка.
      *
      */
-    public function testContentV1TagIdPatch()
+    public function testContentV2TagIdPatch()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1TagNomenclatureLinkPost
+     * Test case for contentV2TagNomenclatureLinkPost
      *
-     * Управление тегами в КТ.
+     * Управление ярлыками в карточке товара.
      *
      */
-    public function testContentV1TagNomenclatureLinkPost()
+    public function testContentV2TagNomenclatureLinkPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1TagPost
+     * Test case for contentV2TagPost
      *
-     * Создание тега.
+     * Создание ярлыка.
      *
      */
-    public function testContentV1TagPost()
+    public function testContentV2TagPost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for contentV1TagsGet
+     * Test case for contentV2TagsGet
      *
-     * Список тегов.
+     * Список ярлыков.
      *
      */
-    public function testContentV1TagsGet()
+    public function testContentV2TagsGet()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for publicApiV1InfoGet
+     * Test case for contentV3MediaFilePost
      *
-     * Получение информации о ценах..
+     * Загрузить медиафайл.
      *
      */
-    public function testPublicApiV1InfoGet()
+    public function testContentV3MediaFilePost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for publicApiV1PricesPost
+     * Test case for contentV3MediaSavePost
      *
-     * Загрузка цен.
-     *
-     */
-    public function testPublicApiV1PricesPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for publicApiV1RevokeDiscountsPost
-     *
-     * Сброс скидок для номенклатур.
+     * Загрузить медиафайлы по ссылкам.
      *
      */
-    public function testPublicApiV1RevokeDiscountsPost()
+    public function testContentV3MediaSavePost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for publicApiV1RevokePromocodesPost
-     *
-     * Сброс промокодов для номенклатур.
-     *
-     */
-    public function testPublicApiV1RevokePromocodesPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for publicApiV1UpdateDiscountsPost
-     *
-     * Установка скидок.
-     *
-     */
-    public function testPublicApiV1UpdateDiscountsPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for publicApiV1UpdatePromocodesPost
-     *
-     * Установка промокодов для номенклатур.
-     *
-     */
-    public function testPublicApiV1UpdatePromocodesPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 }

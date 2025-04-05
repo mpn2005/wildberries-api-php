@@ -11,13 +11,13 @@
  */
 
 /**
- * API продавца
+ * Работа с товарами
  *
- * # Общее описание <style> .langChange {   text-align: left;   padding: 2px 222px 2px 18px; } </style> <style> .new {   display: inline-block;   padding: 2px 8px;   margin: 0;   background-color: #ffa500;   color: #ffffff;   font-size: 13px;   vertical-align: middle;   line-height: 1.6;   border-radius: 4px;   font-weight: 600;   font-size: 12px; } </style> <style> .newM {   padding: 5px 10px;   display: inline-block;   background-color: #ffa500;   color: #ffffff;   cursor: pointer;   text-align: center;   outline: none;   margin: 0 5px 5px 5px;   #border: 1px solid #07090b;   border-radius: 5px;   min-width: 60px;   font-size: 0.9em;   font-weight: bold; } </style>  Wildberries API предоставляет продавцам возможность управления магазином и получения оперативной и статистической информации по протоколу HTTP RestAPI. <br> Описание API предоставляется в формате [Swagger](https://swagger.io/) (Open API) и может быть использовано для импорта в другие инструменты (такие как PostMan) или генерации клиентского кода на различных языках программирования с помощью [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)  <ul> <li> Описание в оригинальном swagger-формате <a href=\"/swagger\">swagger</a> <li> OpenAPI-файл <a href=\"/swagger.yaml\">swagger.yaml</a> </ul>  <br> Для ручной провеПродвижение /и API вы можете использовать: <ul> <li> Под ОС Windows - [PostMan](https://www.postman.com/) <li> Под ОС Linux - [curl](https://curl.se/)  </ul> <br>  ## Поддержка Техническая поддержка осуществляется через диалоги в личном кабинете продавца. При создании нового обращения в техподдержку используйте категорию API. <br> Новости и изменения, касающиеся API, публикуются в [новостной ленте Wildberries](https://seller.wildberries.ru/news). <br> <br> <br>  ## Авторизация Авторизация осуществляется по токенам API, которые  владелец личного кабинета (главный пользователь) самостоятельно  генерирует в разделе   [Профиль --> Настройки --> Доступ к API](https://seller.wildberries.ru/supplier-settings/access-to-api).   <br>  <br>  Существует три типа токенов:   <ol>     <li>Стандартный. Используется для работы с методами из разделов: Цены, Промокоды и скидки, Контент, Marketplace, Рекомендации, Отзывы, Вопросы.</li>     <li>Статистика. Используется для работы с методами из раздела Статистика.</li>     <li>Продвижение. Используется для работы с методами из раздела Продвижение.</li>   </ol>    Обратите внимание, что токен отображается ТОЛЬКО в момент создания. Его надо сохранить, потому что больше его отобразить будет нельзя. <br>Созданный токен следует добавлять в каждый запрос, прибавляя к запросу заголовок (http-header) формата `Authorization: .........`. <br> <br> Обращаем ваше внимание, что интеграции с Порталом Продавца, не использующие Публичное API, противоречат пункту 9.7.6 оферты. <br> Тем не менее, при отсутствии прямой угрозы утечки данных из личного кабинета продавца Wildberries заранее уведомит продавца о запланированной блокировке, связанной с этим пунктом, давая возможность отключить интеграцию. <br> <br> <br> ## Форматы ### Дата и время Во всех методах API статистики дата и время передаются в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).  <br> В большинстве случаев вы можете передать дату или дату со временем. Если время не указано, оно принимается равным 00:00:00. Время можно указывать с точностью до секунд или миллисекунд.  Литера `Z` в конце строки означает часовой пояс UTC. При ее отсутствии время считается в часовом поясе МСК (UTC+3). <br> Примеры: <ul> <li> `2019-06-20` <li> `2019-06-20T00:00:00Z` <li> `2019-06-20T23:59:59` <li> `2019-06-20T00:00:00.12345Z` <li> `2019-06-20T00:00:00.12345` <li> `2017-03-25T00:00:00` </ul> <br> ## Release Notes <p>Для просмотра обновлений перейдите по <span><a href=\"./releasenotes/index.html\" target=\"_blank\">ссылке</a></span>.</p>
+ * <div class=\"description_important\">       Узнать больше о работе с товарами можно в <a href=\"https://seller.wildberries.ru/instructions/category/8eeeafc6-4b7a-453d-925a-00fc56510f67?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Работа с товарами включает в себя:   1. [Создание](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактирование](/openapi/work-with-products#tag/Kartochki-tovarov) карточек товаров: в том числе, получение [категорий, предметов и характеристик товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki) и загрузку [медиафайлов](/openapi/work-with-products#tag/Mediafajly).   2. Настройку [ярлыков](/openapi/work-with-products#tag/Yarlyki) для удобного поиска товаров.   3. Установку [цен и скидок](/openapi/work-with-products#tag/Ceny-i-skidki).   4. Управление [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца.
  *
- * The version of the OpenAPI document: 2.18
+ * The version of the OpenAPI document: products
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 7.0.1
+ * Generator version: 7.12.0
  */
 
 /**
@@ -64,6 +64,8 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'longitude' => 'float',
         'latitude' => 'float',
+        'cargo_type' => 'int',
+        'delivery_type' => 'int',
         'selected' => 'bool'
     ];
 
@@ -81,6 +83,8 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int64',
         'longitude' => 'float64',
         'latitude' => 'float64',
+        'cargo_type' => null,
+        'delivery_type' => null,
         'selected' => null
     ];
 
@@ -91,12 +95,14 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'address' => false,
-		'name' => false,
-		'city' => false,
-		'id' => false,
-		'longitude' => false,
-		'latitude' => false,
-		'selected' => false
+        'name' => false,
+        'city' => false,
+        'id' => false,
+        'longitude' => false,
+        'latitude' => false,
+        'cargo_type' => false,
+        'delivery_type' => false,
+        'selected' => false
     ];
 
     /**
@@ -191,6 +197,8 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'longitude' => 'longitude',
         'latitude' => 'latitude',
+        'cargo_type' => 'cargoType',
+        'delivery_type' => 'deliveryType',
         'selected' => 'selected'
     ];
 
@@ -206,6 +214,8 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'longitude' => 'setLongitude',
         'latitude' => 'setLatitude',
+        'cargo_type' => 'setCargoType',
+        'delivery_type' => 'setDeliveryType',
         'selected' => 'setSelected'
     ];
 
@@ -221,6 +231,8 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'longitude' => 'getLongitude',
         'latitude' => 'getLatitude',
+        'cargo_type' => 'getCargoType',
+        'delivery_type' => 'getDeliveryType',
         'selected' => 'getSelected'
     ];
 
@@ -265,6 +277,40 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const CARGO_TYPE_NUMBER_1 = 1;
+    public const CARGO_TYPE_NUMBER_2 = 2;
+    public const CARGO_TYPE_NUMBER_3 = 3;
+    public const DELIVERY_TYPE_NUMBER_1 = 1;
+    public const DELIVERY_TYPE_NUMBER_2 = 2;
+    public const DELIVERY_TYPE_NUMBER_3 = 3;
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCargoTypeAllowableValues()
+    {
+        return [
+            self::CARGO_TYPE_NUMBER_1,
+            self::CARGO_TYPE_NUMBER_2,
+            self::CARGO_TYPE_NUMBER_3,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDeliveryTypeAllowableValues()
+    {
+        return [
+            self::DELIVERY_TYPE_NUMBER_1,
+            self::DELIVERY_TYPE_NUMBER_2,
+            self::DELIVERY_TYPE_NUMBER_3,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -276,10 +322,10 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[] $data Associated array of property values
+     * @param mixed[]|null $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->setIfExists('address', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
@@ -287,6 +333,8 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('longitude', $data ?? [], null);
         $this->setIfExists('latitude', $data ?? [], null);
+        $this->setIfExists('cargo_type', $data ?? [], null);
+        $this->setIfExists('delivery_type', $data ?? [], null);
         $this->setIfExists('selected', $data ?? [], null);
     }
 
@@ -316,6 +364,24 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getCargoTypeAllowableValues();
+        if (!is_null($this->container['cargo_type']) && !in_array($this->container['cargo_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'cargo_type', must be one of '%s'",
+                $this->container['cargo_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getDeliveryTypeAllowableValues();
+        if (!is_null($this->container['delivery_type']) && !in_array($this->container['delivery_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'delivery_type', must be one of '%s'",
+                $this->container['delivery_type'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -490,6 +556,80 @@ class Office implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable latitude cannot be null');
         }
         $this->container['latitude'] = $latitude;
+
+        return $this;
+    }
+
+    /**
+     * Gets cargo_type
+     *
+     * @return int|null
+     */
+    public function getCargoType()
+    {
+        return $this->container['cargo_type'];
+    }
+
+    /**
+     * Sets cargo_type
+     *
+     * @param int|null $cargo_type <dl> <dt>Тип товара, который принимает склад:</dt> <dd>1 - стандартный</dd> <dd>2 - СГТ (Сверхгабаритный товар)</dd> <dd>3 - КГТ+ (Крупногабаритный товар)</dd> </dl>
+     *
+     * @return self
+     */
+    public function setCargoType($cargo_type)
+    {
+        if (is_null($cargo_type)) {
+            throw new \InvalidArgumentException('non-nullable cargo_type cannot be null');
+        }
+        $allowedValues = $this->getCargoTypeAllowableValues();
+        if (!in_array($cargo_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'cargo_type', must be one of '%s'",
+                    $cargo_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['cargo_type'] = $cargo_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets delivery_type
+     *
+     * @return int|null
+     */
+    public function getDeliveryType()
+    {
+        return $this->container['delivery_type'];
+    }
+
+    /**
+     * Sets delivery_type
+     *
+     * @param int|null $delivery_type <dl> <dt>Тип доставки, который принимает склад:</dt> <dd>1 - доставка на склад WB</dd> <dd>2 - доставка силами продавца</dd> <dd>3 - доставка курьером WB</dd> </dl>
+     *
+     * @return self
+     */
+    public function setDeliveryType($delivery_type)
+    {
+        if (is_null($delivery_type)) {
+            throw new \InvalidArgumentException('non-nullable delivery_type cannot be null');
+        }
+        $allowedValues = $this->getDeliveryTypeAllowableValues();
+        if (!in_array($delivery_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'delivery_type', must be one of '%s'",
+                    $delivery_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['delivery_type'] = $delivery_type;
 
         return $this;
     }
